@@ -43,7 +43,8 @@ function updateData(){
 }
 
 function deleteData(){
-
+    const data = []
+    return data;
 }
 
-export {buildData};
+export {buildData, deleteData};

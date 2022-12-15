@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
-import {buildData} from './data/buildData'
+import {buildData, deleteData} from './data/buildData'
 
 function App() {
 
@@ -18,13 +18,10 @@ function App() {
 
 
   return (
-
-    <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home buildData={buildData} data={data} setData={setData}/>}/>
+      <Route path="/" element={<Home buildData={buildData} deleteData={deleteData} data={data} setData={setData}/>}/>
       <Route path="/favourites" element={<Favourites/>}/>
     </Routes>
-  </BrowserRouter>
   )
 }
 
