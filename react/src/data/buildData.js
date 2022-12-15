@@ -6,7 +6,8 @@ function create(){
         category: category[random(category.length)],
         name: meals[random(meals.length)], 
         prepTime: randomTime(),
-        cookTime: randomTime()
+        cookTime: randomTime(), 
+        isFav: false
     }
     return data
 }
@@ -42,9 +43,16 @@ function updateData(){
 
 }
 
+function favouriteAll(currentArray = []){
+    console.log(currentArray)
+    return currentArray.map((item) => {
+        return {...item, isFav: true}
+    })
+}
+
 function deleteData(){
     const data = []
     return data;
 }
 
-export {buildData, deleteData};
+export {buildData, deleteData, favouriteAll};

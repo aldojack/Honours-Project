@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import FunctionButton from '../components/FunctionButton'
 import ItemsContainer from '../components/ItemsContainer'
 
-export default function Home({buildData, deleteData, data, setData}) {
+export default function Home({buildData, deleteData, favouriteAll, data, setData}) {
   return (
     <>
         <Nav/>
@@ -19,7 +19,7 @@ export default function Home({buildData, deleteData, data, setData}) {
                 <FunctionButton BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(buildData(1000))}/>
                 <FunctionButton BtnName="Delete all recipes" clickHandler={() => setData(deleteData())}/>
                 <FunctionButton BtnName="Edit all recipes"/>
-                <FunctionButton BtnName="Favourite all recipes"/>
+                <FunctionButton BtnName="Favourite all recipes" clickHandler={() => setData(favouriteAll(data))}/>
               </div>
               <ItemsContainer data={data}/>
             </main>   

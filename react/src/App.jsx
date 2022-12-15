@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
-import {buildData, deleteData} from './data/buildData'
+import {buildData, deleteData, favouriteAll} from './data/buildData'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home buildData={buildData} deleteData={deleteData} data={data} setData={setData}/>}/>
+      <Route path="/" element={<Home buildData={buildData} favouriteAll={favouriteAll} deleteData={deleteData} data={data} setData={setData}/>}/>
       <Route path="/favourites" element={<Favourites/>}/>
     </Routes>
   )
