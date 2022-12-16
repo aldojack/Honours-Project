@@ -1,6 +1,5 @@
+export default function Item({item, toggleHandler}) {
 
-
-export default function Item({item}) {
   return (
     <div className='item flex dark:bg-gray-200 bg-gray-100 p-4'>
     <div className='item-data text-start text-black'>
@@ -18,7 +17,7 @@ export default function Item({item}) {
     <div className='edit-item-container self-center ml-auto'>
       <i className='edit'>🖊</i>
       <i className='delete'>✖</i>
-      <i className='favourite'>🤍</i>
+      <button className='favourite' onClick={() => toggleHandler(item.id)}>🤍</button>
     </div>
   </div>
   )
