@@ -39,20 +39,21 @@ function buildData(count){
 }
 
 
-function updateData(){
-
+function updateAll(currentArray){
+    return currentArray.map((item) => {
+        return{...item, name: meals[random(meals.length)], }
+    })
 }
 
 function favouriteAll(currentArray = []){
-    console.log(currentArray)
     return currentArray.map((item) => {
         return {...item, isFav: true}
     })
 }
 
-function deleteData(){
+function deleteAll(){
     const data = []
     return data;
 }
 
-export {buildData, deleteData, favouriteAll};
+export {buildData, deleteAll, favouriteAll, updateAll};
