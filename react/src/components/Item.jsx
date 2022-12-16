@@ -1,3 +1,5 @@
+import { Heart, Eraser, PencilSimple} from "phosphor-react";
+
 export default function Item({item, toggleHandler}) {
 
   return (
@@ -10,14 +12,13 @@ export default function Item({item, toggleHandler}) {
         <p className='recipe-name'>Recipe: {item.name}</p>
         <p className='recipe-preptime'>Prep Time: {item.prepTime === 1 ? `${item.prepTime} minute` : `${item.prepTime} minutes`}</p>
         <p className='recipe-preptime'>Cook Time: {item.cookTime === 1 ? `${item.cookTime} minute` : `${item.cookTime} minutes`}</p>
-        {item.isFav && <p>❤</p>}
     </div>
 
     
     <div className='edit-item-container self-center ml-auto'>
-      <i className='edit'>🖊</i>
-      <i className='delete'>✖</i>
-      <button className='favourite' onClick={() => toggleHandler(item.id)}>🤍</button>
+      <button className='edit'><PencilSimple size={20} color="#080707" weight="duotone" /></button>
+      <button className='delete'><Eraser size={20} color="#080707" weight="duotone" /></button>
+      <button className='favourite' onClick={() => toggleHandler(item.id)}>{item.isFav ? <Heart size={20}/> : <Heart size={20} color="#e91c1c" weight="fill" />}</button>
     </div>
   </div>
   )
