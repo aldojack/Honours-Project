@@ -1,6 +1,6 @@
 import { Heart, Eraser, PencilSimple} from "phosphor-react";
 
-export default function Item({item, toggleHandler}) {
+export default function Item({item, toggleHandler, deleteHandler}) {
 
   return (
     <div className='item flex dark:bg-gray-200 bg-gray-100 p-4'>
@@ -17,8 +17,8 @@ export default function Item({item, toggleHandler}) {
     
     <div className='edit-item-container self-center ml-auto'>
       <button className='edit'><PencilSimple size={20} color="#080707" weight="duotone" /></button>
-      <button className='delete'><Eraser size={20} color="#080707" weight="duotone" /></button>
-      <button className='favourite' onClick={() => toggleHandler(item.id)}>{item.isFav ? <Heart size={20}/> : <Heart size={20} color="#e91c1c" weight="fill" />}</button>
+      <button className='delete' onClick={() => deleteHandler(item.id)}><Eraser size={20} color="#080707" weight="duotone" /></button>
+      <button className='favourite' onClick={() => toggleHandler(item.id)}>{item.isFav === false ? <Heart size={20}/> : <Heart size={20} color="#e91c1c" weight="fill" />}</button>
     </div>
   </div>
   )

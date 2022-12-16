@@ -11,7 +11,16 @@ export default function ItemsContainer({data, setData}) {
     })
     setData(toggledItem);
   }
-  const items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav}/>) : null
+
+  function deleteItem(id){
+
+    const newArray = data.filter(item => {
+      return item.id !== id
+    })
+    setData(newArray);
+  }
+  const items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem}/>) : null
+
 
   return (
     <div className='items-container bg-gray-800 dark:bg-gray-800 text-white dark:text-black w-96 mx-auto mt-12 p-4 space-y-4'>
