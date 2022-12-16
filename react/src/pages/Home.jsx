@@ -10,7 +10,7 @@ export default function Home({dataFunctions, data, setData}) {
         <Nav/>
         <div className='bg-white dark:bg-gray-900 flex-grow'>
           <div className='w-2/3 mx-auto text-center'>
-            <Hero/>
+            <Hero HeroText="Here at Recipe Manager we focus on showing some of the very best recipes and allow you to add your own to share or favourite ones from the many other users."/>
             <main>
               <h1 className="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
               <div className='functions gap-4 grid grid-cols-3 mt-8 mx-auto w-fit'>
