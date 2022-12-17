@@ -13,7 +13,7 @@ export default function Home({dataFunctions, data, setData}) {
             <Hero HeroText="Here at Recipe Manager we focus on showing some of the very best recipes and allow you to add your own to share or favourite ones from the many other users."/>
             <main>
               <h1 className="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
-              <div className='functions gap-4 grid grid-cols-3 mt-8 mx-auto w-fit'>
+              <div className='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
                 <FunctionButton BtnName="Add new recipe" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1)])}/>
                 <FunctionButton BtnName="Add 100 recipes" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(100)])}/>
                 <FunctionButton BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(dataFunctions.buildData(1000))}/>
