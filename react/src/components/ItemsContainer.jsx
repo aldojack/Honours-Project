@@ -1,6 +1,6 @@
 import Item from './Item'
-export default function ItemsContainer({data, setData, updateHandler}) {
-  
+export default function ItemsContainer({data, setData, updateHandler, favourites = false}) {
+  let items = null
   function toggleFav(id){
 
     const toggledItem = data.map(item => {
@@ -30,7 +30,12 @@ export default function ItemsContainer({data, setData, updateHandler}) {
     })
     setData(updatedItem);
   }
-  const items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
+  if(favourites){
+    items = data.length ? data.filter((item) => item.isFav).map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
+  }
+  else{
+    items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
+  }
 
 
   return (

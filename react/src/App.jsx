@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
-// import {buildData, deleteAll, favouriteAll} from './data/buildData'
 import * as dataFunc from './data/buildData'
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home dataFunctions={dataFunc} data={data} setData={setData}/>}/>
-      <Route path="/favourites" element={<Favourites/>}/>
+      <Route path="/favourites" element={<Favourites data={data} setData={setData}/>}/>
     </Routes>
   )
 }
