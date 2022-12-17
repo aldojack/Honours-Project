@@ -23,9 +23,9 @@ export default function Home({dataFunctions, data, setData}) {
               </div>
               <ItemsContainer data={data} setData={setData} updateHandler={dataFunctions.updateOne}/>
             </main>   
-            <Footer/>
           </div>
         </div>
+      <Footer/>
     </>
   )
 }

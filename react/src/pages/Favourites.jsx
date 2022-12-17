@@ -16,9 +16,9 @@ export default function Favourites({data, setData}) {
             <h1 className="text-5xl font-extrabold dark:text-white">Favourite Recipes</h1>
             <ItemsContainer data={data} setData={setData} favourites={favourites}/>
           </main>   
-          <Footer/>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
