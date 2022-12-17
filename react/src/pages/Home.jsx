@@ -21,7 +21,7 @@ export default function Home({dataFunctions, data, setData}) {
                 <FunctionButton BtnName="Edit all recipes" clickHandler={() => setData(dataFunctions.updateAll(data))}/>
                 <FunctionButton BtnName="Favourite all recipes" clickHandler={() => setData(dataFunctions.favouriteAll(data))}/>
               </div>
-              <ItemsContainer data={data} setData={setData}/>
+              <ItemsContainer data={data} setData={setData} updateHandler={dataFunctions.updateOne}/>
             </main>   
             <Footer/>
           </div>

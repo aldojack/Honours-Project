@@ -1,5 +1,5 @@
 import Item from './Item'
-export default function ItemsContainer({data, setData}) {
+export default function ItemsContainer({data, setData, updateHandler}) {
   
   function toggleFav(id){
 
@@ -19,7 +19,18 @@ export default function ItemsContainer({data, setData}) {
     })
     setData(newArray);
   }
-  const items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem}/>) : null
+
+  function updateItem(id){
+
+    const updatedItem = data.map(item => {
+      if(item.id === id){
+        return updateHandler(item)
+      }
+      return item
+    })
+    setData(updatedItem);
+  }
+  const items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
 
 
   return (

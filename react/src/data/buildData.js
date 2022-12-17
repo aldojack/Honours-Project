@@ -45,6 +45,10 @@ function updateAll(currentArray){
     })
 }
 
+function updateOne(item){
+    return{...item, name: meals[random(meals.length)], }
+}
+
 function favouriteAll(currentArray = []){
     return currentArray.map((item) => {
         return {...item, isFav: true}
@@ -56,4 +60,4 @@ function deleteAll(){
     return data;
 }
 
-export {buildData, deleteAll, favouriteAll, updateAll};
+export {buildData, deleteAll, favouriteAll, updateAll, updateOne};
