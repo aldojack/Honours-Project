@@ -3,7 +3,7 @@ import { Heart, Eraser, PencilSimple} from "phosphor-react";
 export default function Item({item, toggleHandler, deleteHandler}) {
 
   return (
-    <div className='item flex flex-col text-sm md:text-base md:flex-row dark:bg-gray-200 bg-gray-100 p-4'>
+    <div className='item flex flex-col text-sm md:text-base md:flex-row md:px-12 dark:bg-gray-200 bg-gray-100 p-4'>
     <div className='item-data text-start text-black'>
       <div className='item-category flex space-x-2'>
           <p className='bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded p-1 text-sm'>{item.category}</p>

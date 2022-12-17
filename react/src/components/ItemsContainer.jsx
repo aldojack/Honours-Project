@@ -23,7 +23,7 @@ export default function ItemsContainer({data, setData}) {
 
 
   return (
-    <div className='items-container w-full md:w-2/3 bg-gray-800 dark:bg-gray-800 text-white dark:text-black w-96 mx-auto mt-12 p-4 space-y-4'>
+    <div className='items-container w-full md:w-max bg-gray-800 dark:bg-gray-800 text-white dark:text-black mx-auto mt-12 p-4 space-y-4'>
       {items || <p className='text-white'>No items to display</p>}
   </div>
   )
