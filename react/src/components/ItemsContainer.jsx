@@ -30,6 +30,7 @@ export default function ItemsContainer({data, setData, updateHandler, favourites
     })
     setData(updatedItem);
   }
+  
   if(favourites){
     items = data.length ? data.filter((item) => item.isFav).map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
   }
