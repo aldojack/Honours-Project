@@ -1,9 +1,9 @@
 <script setup>
-import Nav from '../components/Nav.vue'
-import Hero from '../components/Hero.vue'
-import FunctionButton from '../components/FunctionButton.vue'
-import ItemsContainer from '../components/ItemContainer.vue';
-import Footer from '../components/Footer.vue';
+import Nav from '@/components/Nav.vue'
+import Hero from '@/components/Hero.vue'
+import FunctionButton from '@/components/FunctionButton.vue'
+import ItemsContainer from '@/components/ItemContainer.vue';
+import Footer from '@/components/Footer.vue';
 
 
 </script>
