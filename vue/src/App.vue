@@ -1,31 +1,31 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import Nav from '../src/components/Nav.vue'
+import Hero from '../src/components/Hero.vue'
+import FunctionButton from '../src/components/FunctionButton.vue'
+import ItemsContainer from './components/ItemContainer.vue';
+import Footer from './components/Footer.vue';
+
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img class="logo" alt="Vite logo" src="/vite.svg" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <Nav />
+  <div class='bg-white dark:bg-gray-900 flex-grow'>
+    <div class='w-2/3 mx-auto text-center'>
+      <Hero HeroText="The one stop shop to store recipes!" />
+      <main>
+        <h1 class="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
+        <div class='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
+          <FunctionButton />
+          <FunctionButton />
+          <FunctionButton />
+          <FunctionButton />
+          <FunctionButton />
+          <FunctionButton />
+        </div>
+        <ItemsContainer/>
+      </main>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Footer />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
