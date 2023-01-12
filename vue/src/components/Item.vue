@@ -7,7 +7,7 @@ library.add(faPen, faTrash, faHeart)
 const props = defineProps({
     meal: Object
 })
-console.log(props.item)
+
 const {name, category, cookTime, prepTime} = props.meal
 </script>
 
