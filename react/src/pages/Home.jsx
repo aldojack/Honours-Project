@@ -16,7 +16,7 @@ export default function Home({dataFunctions, data, setData}) {
               <div className='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
                 <FunctionButton BtnName="Add new recipe" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1)])}/>
                 <FunctionButton BtnName="Add 100 recipes" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(100)])}/>
-                <FunctionButton BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(dataFunctions.buildData(1000))}/>
+                <FunctionButton BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1000)])}/>
                 <FunctionButton BtnName="Delete all recipes" clickHandler={() => setData(dataFunctions.deleteAll())}/>
                 <FunctionButton BtnName="Edit all recipes" clickHandler={() => setData(dataFunctions.updateAll(data))}/>
                 <FunctionButton BtnName="Favourite all recipes" clickHandler={() => setData(dataFunctions.favouriteAll(data))}/>
