@@ -2,13 +2,15 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faPen, faTrash,faHeart } from '@fortawesome/free-solid-svg-icons'
-library.add(faPen, faTrash, faHeart)
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'
+
+
+library.add(faPen, faTrash, faHeart, farHeart)
 
 const props = defineProps({
-    meal: Object
+    meal: Object, default: {undefined}
 })
 
-const {name, category, cookTime, prepTime} = props.meal
 </script>
 
 <template>
@@ -16,24 +18,25 @@ const {name, category, cookTime, prepTime} = props.meal
         <div class='item-data text-start text-black'>
             <div class='item-category flex space-x-2'>
                 <p class='bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded p-1 text-sm'>
-                    {{category}}</p>
+                    {{meal.category}}</p>
             </div>
 
-            <p class='recipe-name'>Recipe: {{name}}</p>
-            <p class='recipe-preptime'>Prep Time: {{prepTime}} minutes</p>
-            <p class='recipe-preptime'>Cook Time: {{cookTime}} minutes</p>
+            <p class='recipe-name'>Recipe: {{meal.name}}</p>
+            <p class='recipe-preptime'>Prep Time: {{meal.prepTime}} minutes</p>
+            <p class='recipe-preptime'>Cook Time: {{meal.cookTime}} minutes</p>
         </div>
 
 
         <div class='edit-item-container space-x-6 md:self-center md:ml-auto md:space-x-2 shrink-0'>
             <button class='edit'>
-                <font-awesome-icon icon="fa-solid fa-pen" />
+                <font-awesome-icon icon="fa-solid fa-pen"/>
             </button>
             <button class='delete'>
                 <font-awesome-icon icon="fa-solid fa-trash" />
             </button>
             <button class='favourite'>
-                <font-awesome-icon icon="fa-solid fa-heart" />
+                <font-awesome-icon icon="fa-solid fa-heart" v-if="meal.isFav"/>
+                <font-awesome-icon icon="fa-regular fa-heart" v-else/>
             </button>
         </div>
     </div>
