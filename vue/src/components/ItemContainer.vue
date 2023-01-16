@@ -4,8 +4,6 @@ import Item from '@/components/Item.vue';
 const props = defineProps({
   items: {type: Array, default: () => []},
 })
-
-
 </script>
 
 <template>
