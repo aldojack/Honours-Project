@@ -10,6 +10,20 @@ library.add(faPen, faTrash, faHeart, farHeart)
 const props = defineProps({
     meal: Object, default: {undefined}
 })
+const emits = defineEmits(['edit', 'delete','toggle'])
+
+
+const onEdit = () => {
+    emits('edit',props.meal.id)
+}
+
+const onDelete = () => {
+    emits('delete',props.meal.id)
+}
+
+const toggle = () => {
+    emits('toggle',props.meal.id)
+}
 
 </script>
 
@@ -28,13 +42,13 @@ const props = defineProps({
 
 
         <div class='edit-item-container space-x-6 md:self-center md:ml-auto md:space-x-2 shrink-0'>
-            <button class='edit'>
+            <button class='edit' @click="onEdit">
                 <font-awesome-icon icon="fa-solid fa-pen"/>
             </button>
-            <button class='delete'>
+            <button class='delete' @click="onDelete">
                 <font-awesome-icon icon="fa-solid fa-trash" />
             </button>
-            <button class='favourite'>
+            <button class='favourite' @click="toggle">
                 <font-awesome-icon icon="fa-solid fa-heart" v-if="meal.isFav"/>
                 <font-awesome-icon icon="fa-regular fa-heart" v-else/>
             </button>

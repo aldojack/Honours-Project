@@ -13,6 +13,34 @@ watch(() => data.items,(newValue) => {
   localStorage.setItem('items', JSON.stringify(newValue))
 }, {deep: true});
 
+const onEdit = (id) =>{
+  const updatedItem = data.items.map(item => {
+      if(item.id === id){
+        return dataFunc.updateOne(item)
+      }
+      return item
+    })
+    data.items = updatedItem;
+}
+
+const onDelete = (id) =>{
+  const newArray = data.items.filter(item => {
+      return item.id !== id
+    })
+    data.items = newArray;
+}
+
+const onToggle = (id) =>{
+  const toggledItem = data.items.map(item => {
+      if(item.id === id){
+        return{...item, isFav: !item.isFav}
+      }
+      return item
+    })
+    data.items = toggledItem;
+
+}
+
 </script>
 
 <template>
@@ -28,7 +56,12 @@ watch(() => data.items,(newValue) => {
           <FunctionButton name="Edit all recipes" @click="() => data.items = dataFunc.updateAll(data.items)"/>
           <FunctionButton name="Favourite all recipes" @click="() => data.items = dataFunc.favouriteAll(data.items)"/>
         </div>
-        <ItemsContainer :items="data.items"/>
+        <ItemsContainer
+          :items="data.items"
+          @delete="onDelete"
+          @edit="onEdit"
+          @toggle="onToggle"
+        />
       </main>
     </div>
 </template>

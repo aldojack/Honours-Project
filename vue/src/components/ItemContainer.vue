@@ -1,9 +1,20 @@
 <script setup>
+import {computed} from 'vue'
 import Item from '@/components/Item.vue';
 
 const props = defineProps({
   items: {type: Array, default: () => []},
+  onDelete: {type: Function},
+  onEdit: {type: Function},
+  onToggle: {type: Function}
 })
+
+const favourites = computed(() => {
+  return props.items.filter((item) => item.isFav)
+})
+
+console.log(favourites.value)
+
 </script>
 
 <template>
@@ -14,6 +25,9 @@ const props = defineProps({
           v-if="items.length > 0"
           :key="item.id"
           :meal="item"
+          @delete="props.onDelete"
+          @edit="props.onEdit"
+          @toggle="props.onToggle"
         /> 
         <p v-else class='text-white'>No items to display</p>
     </div>
