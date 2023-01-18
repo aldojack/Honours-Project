@@ -1,14 +1,11 @@
-import Nav from '../components/Nav'
+
 import Hero from '../components/Hero'
-import Footer from '../components/Footer'
 import FunctionButton from '../components/FunctionButton'
 import ItemsContainer from '../components/ItemsContainer'
 
 export default function Home({dataFunctions, data, setData}) {
   return (
     <>
-        <Nav/>
-        <div className='bg-white dark:bg-gray-900 flex-grow'>
           <div className='w-2/3 mx-auto text-center'>
             <Hero HeroText="Here at Recipe Manager we focus on showing some of the very best recipes and allow you to add your own to share or favourite ones from the many other users."/>
             <main>
@@ -24,8 +21,6 @@ export default function Home({dataFunctions, data, setData}) {
               <ItemsContainer data={data} setData={setData} updateHandler={dataFunctions.updateOne}/>
             </main>   
           </div>
-        </div>
-      <Footer/>
     </>
   )
 }

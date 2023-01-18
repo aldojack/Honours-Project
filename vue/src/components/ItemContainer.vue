@@ -9,12 +9,6 @@ const props = defineProps({
   onToggle: {type: Function}
 })
 
-const favourites = computed(() => {
-  return props.items.filter((item) => item.isFav)
-})
-
-console.log(favourites.value)
-
 </script>
 
 <template>
