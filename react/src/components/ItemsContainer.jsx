@@ -1,5 +1,6 @@
 import Item from './Item'
-export default function ItemsContainer({data, setData, updateHandler, favourites = false}) {
+import {updateOne} from  '../data/buildData'
+export default function ItemsContainer({data, setData}) {
   let items = null
   function toggleFav(id){
 
@@ -24,17 +25,14 @@ export default function ItemsContainer({data, setData, updateHandler, favourites
 
     const updatedItem = data.map(item => {
       if(item.id === id){
-        return updateHandler(item)
+        return updateOne(item)
       }
       return item
     })
     setData(updatedItem);
   }
   
-  if(favourites){
-    items = data.length ? data.filter((item) => item.isFav).map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
-  }
-  else{
+  if(data.length >= 1){
     items = data.length ? data.map((item) => <Item item={item} key={item.id} setData={setData} toggleHandler={toggleFav} deleteHandler={deleteItem} updateHandler={updateItem}/>) : null
   }
 
