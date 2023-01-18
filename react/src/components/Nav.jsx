@@ -1,5 +1,12 @@
-import {Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 export default function Nav() {
+
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+
+  // let activeClassName = "underline";
+  
   return (
 <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
   <div className="container flex flex-wrap items-center justify-between mx-auto">
@@ -40,11 +47,21 @@ export default function Nav() {
       <ul
         className="flex flex-col p-4 mt-4 border text-black dark:text-white border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
-        <li>
-          <Link to="/">Home</Link>
+        <li className="text-2xl">
+          <NavLink 
+          to="/"             
+          style={({ isActive }) =>
+              isActive ? activeStyle : undefined}>
+              Home
+          </NavLink>
         </li>
-        <li>
-          <Link to="/favourites">Favourites</Link>
+        <li className="text-2xl">
+        <NavLink 
+          to="favourites"             
+          style={({ isActive }) =>
+              isActive ? activeStyle : undefined}>
+              Favourites
+          </NavLink>
         </li>
       </ul>
     </div>

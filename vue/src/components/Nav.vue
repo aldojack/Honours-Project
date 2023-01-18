@@ -21,10 +21,10 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
                     class="flex flex-col p-4 mt-4 border text-black dark:text-white border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
+                    <li class="text-2xl">
                         <router-link to="/">Home</router-link>
                     </li>
-                    <li>
+                    <li class="text-2xl">
                         <router-link to="/favourites">Favourites</router-link>
                     </li>
                 </ul>
@@ -32,3 +32,9 @@
         </div>
     </nav>
 </template>
+
+<style lang="css">
+li .active{
+    text-decoration: underline;
+}
+</style>
