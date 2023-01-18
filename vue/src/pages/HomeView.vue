@@ -45,7 +45,7 @@ const onToggle = (id) =>{
 
 <template>
     <div class='w-2/3 mx-auto text-center'>
-      <Hero HeroText="The one stop shop to store recipes!" />
+      <Hero HeroText="Here at Recipe Manager we focus on showing some of the very best recipes and allow you to add your own to share or favourite ones from the many other users." />
       <main>
         <h1 class="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
         <div class='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
