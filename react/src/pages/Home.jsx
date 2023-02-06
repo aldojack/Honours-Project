@@ -11,12 +11,12 @@ export default function Home({dataFunctions, data, setData}) {
             <main>
               <h1 className="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
               <div className='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
-                <FunctionButton BtnName="Add new recipe" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1)])}/>
-                <FunctionButton BtnName="Add 100 recipes" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(100)])}/>
-                <FunctionButton BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1000)])}/>
-                <FunctionButton BtnName="Delete all recipes" clickHandler={() => setData(dataFunctions.deleteAll())}/>
-                <FunctionButton BtnName="Edit all recipes" clickHandler={() => setData(dataFunctions.updateAll(data))}/>
-                <FunctionButton BtnName="Favourite all recipes" clickHandler={() => setData(dataFunctions.favouriteAll(data))}/>
+                <FunctionButton id="addOne" BtnName="Add new recipe" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1)])}/>
+                <FunctionButton id="addHundred" BtnName="Add 100 recipes" clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(100)])}/>
+                <FunctionButton id="addThousand" BtnName="Add 1000 recipes" setData={setData} clickHandler={() => setData(prevData => [...prevData, ...dataFunctions.buildData(1000)])}/>
+                <FunctionButton id="deleteAll" BtnName="Delete all recipes" clickHandler={() => setData(dataFunctions.deleteAll())}/>
+                <FunctionButton id="editAll" BtnName="Edit all recipes" clickHandler={() => setData(dataFunctions.updateAll(data))}/>
+                <FunctionButton id="favAll" BtnName="Favourite all recipes" clickHandler={() => setData(dataFunctions.favouriteAll(data))}/>
               </div>
               <ItemsContainer data={data} setData={setData} updateHandler={dataFunctions.updateOne}/>
             </main>   

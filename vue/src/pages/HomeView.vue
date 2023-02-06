@@ -49,12 +49,12 @@ const onToggle = (id) =>{
       <main>
         <h1 class="text-5xl font-extrabold dark:text-white">Recipe Manager</h1>
         <div class='functions gap-4 grid grid-cols-2 md:grid-cols-3 mt-8 mx-auto w-fit'>
-          <FunctionButton name="Add new recipe" @click="() => data.items = [...data.items,...dataFunc.buildData(1)]"/>
-          <FunctionButton name="Add 100 recipes" @click="() => data.items = [...data.items,...dataFunc.buildData(100)]"/>
-          <FunctionButton name="Add 1000 recipes" @click="() => data.items = [...data.items,...dataFunc.buildData(1000)]"/>
-          <FunctionButton name="Delete all recipes" @click="() => data.items = dataFunc.deleteAll()"/>
-          <FunctionButton name="Edit all recipes" @click="() => data.items = dataFunc.updateAll(data.items)"/>
-          <FunctionButton name="Favourite all recipes" @click="() => data.items = dataFunc.favouriteAll(data.items)"/>
+          <FunctionButton id="addOne" name="Add new recipe" @click="() => data.items = [...data.items,...dataFunc.buildData(1)]"/>
+          <FunctionButton id="addHundred" name="Add 100 recipes" @click="() => data.items = [...data.items,...dataFunc.buildData(100)]"/>
+          <FunctionButton id="addThousand" name="Add 1000 recipes" @click="() => data.items = [...data.items,...dataFunc.buildData(1000)]"/>
+          <FunctionButton id="deleteAll" name="Delete all recipes" @click="() => data.items = dataFunc.deleteAll()"/>
+          <FunctionButton id="editAll" name="Edit all recipes" @click="() => data.items = dataFunc.updateAll(data.items)"/>
+          <FunctionButton id="favAll" name="Favourite all recipes" @click="() => data.items = dataFunc.favouriteAll(data.items)"/>
         </div>
         <ItemsContainer
           :items="data.items"
